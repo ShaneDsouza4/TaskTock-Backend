@@ -30,4 +30,11 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 
+const userRoute = require("./routes/user");
+app.use("/api/user", userRoute);
+
+app.get("/test", (req, res)=>{
+    res.send("Test Works")
+});
+
 app.listen(PORT, ()=>console.log(`Server is running at PORT: ${PORT}`));
