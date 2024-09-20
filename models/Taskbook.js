@@ -20,7 +20,7 @@ const entrySchema = new mongoose.Schema({
 });
 
 //Main Schema
-const workbookSchema = new mongoose.Schema(
+const taskbookSchema = new mongoose.Schema(
   {
     entries: [entrySchema], //Will contain entry schema
     userRef: {
@@ -31,8 +31,8 @@ const workbookSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "workbooks",
+    collection: "taskbooks",
   }
 );
 
-module.exports = mongoose.model("Workbook", workbookSchema);
+module.exports = mongoose.model("Taskbook", taskbookSchema);
