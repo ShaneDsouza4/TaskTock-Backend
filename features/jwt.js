@@ -1,7 +1,7 @@
 const JwtStrategy = require("passport-jwt").Strategy; //Auth Strategy
 const ExtractJwt = require("passport-jwt").ExtractJwt; //Perform boilerplate funcitonality
 
-const User = require("../models/user.js");
+const User = require("../models/User");
 
 const opts = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), //Knows where JWT exists and extracts it

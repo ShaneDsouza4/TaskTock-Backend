@@ -1,6 +1,5 @@
 const passport = require("passport");
 
-//Exporting Middleware
 module.exports = (req, res, next) => {
   passport.authenticate("jwt", function (err, user, info) {
     if (err) return next(err);
@@ -8,9 +7,9 @@ module.exports = (req, res, next) => {
     if (!user)
       return res
         .status(401)
-        .json({ message: "Unauthorized Access - No Token Provided." });
+        .json({ message: "Unauthorized Access - No Token Provided!" });
 
-    req.user = user; //If user found
+    req.user = user;
 
     next();
   })(req, res, next);

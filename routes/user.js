@@ -5,11 +5,8 @@ const { check } = require("express-validator");
 const Auth = require("../controllers/auth");
 
 const passport = require("passport");
+require("../features/jwt")(passport);
 router.use(passport.initialize());
-
-router.get("/test", (req, res) => {
-  res.status(200).json({ msg: "success" });
-});
 
 router.post(
   "/register",
